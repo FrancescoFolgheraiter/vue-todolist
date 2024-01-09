@@ -13,27 +13,31 @@
         
         <div id="app">
             <div class="container">
-                <div>
-                    <input type="text" placeholder="aggiungi task" v-model="newTask">
-                    <button @click="addTask()">
-                        Aggiungi
-                    </button>
-                </div>
-                <div>
-                    <ul v-if="todos.length > 0">
-                        <li v-for ="(todo, i) in todos" :class="{
-                            'done': todo.done,
-                            'not-done': !todo.done,
-                        }">
-                            {{todo.text}}
-                            <button @click="deleteTodo(i)">
-                                &#10005;
-                            </button>
-                        </li>
-                    </ul>
-                    <p v-else>
-                        Non hai da fare nulla :D
-                    </p>
+                <div class="row">
+                    <div class="col-12">
+                        <input type="text" @keyup.enter="addTask()" placeholder="aggiungi task" v-model="newTask">
+                        <button @click="addTask()">
+                            Aggiungi
+                        </button>
+                    </div>
+                    <div class="col-12">
+                        <ul v-if="todos.length > 0">
+                            <li v-for ="(todo, i) in todos" :class="{
+                                'done': todo.done,
+                                'not-done': !todo.done,
+                            }" class="d-flex justify-content-between">
+                                <div>
+                                    {{todo.text}}
+                                </div>
+                                <button @click="deleteTodo(i)">
+                                    &#10005;
+                                </button>
+                            </li>
+                        </ul>
+                        <p v-else>
+                            Non hai da fare nulla :D
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
