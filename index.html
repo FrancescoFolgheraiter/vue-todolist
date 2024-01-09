@@ -26,9 +26,9 @@
                                 'done': todo.done,
                                 'not-done': !todo.done,
                             }" class="d-flex justify-content-between">
-                                <div>
+                                <span @click="reverseDone(i)">
                                     {{todo.text}}
-                                </div>
+                                </span>
                                 <button @click="deleteTodo(i)">
                                     &#10005;
                                 </button>

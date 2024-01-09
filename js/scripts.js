@@ -27,6 +27,10 @@ createApp({
                 this.todos.push({text:this.newTask, done: false,})
             }
             this.newTask = "";
+        },
+        reverseDone(j){
+            console.log("hai clicclato sull'elemento n:",j)
+            this.todos[j].done = !(this.todos[j].done);
         }
     }
   // Monto l'istanza di Vue in pagina
