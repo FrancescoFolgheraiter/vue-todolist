@@ -19,7 +19,9 @@ createApp({
         };
     },
     methods: {
-
+        deleteTodo(j){
+            this.todos.splice(j,1);
+        }
     }
   // Monto l'istanza di Vue in pagina
 }).mount('#app');

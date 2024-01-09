@@ -14,5 +14,11 @@ html {
 /*
     GENERAL
 */
+.done{
+    color:green;
+}
+.not-done{
+    color:red;
+}
 
 /*utility*/
