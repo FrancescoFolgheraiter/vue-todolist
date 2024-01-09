@@ -15,12 +15,18 @@ createApp({
                     done: true,
                 }
             ],
-            message:"funziona",
+            newTask: "",
         };
     },
     methods: {
         deleteTodo(j){
             this.todos.splice(j,1);
+        },
+        addTask(){
+            if(this.newTask.trim().length > 3){
+                this.todos.push({text:this.newTask, done: false,})
+            }
+            this.newTask = "";
         }
     }
   // Monto l'istanza di Vue in pagina
