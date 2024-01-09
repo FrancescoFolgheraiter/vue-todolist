@@ -12,30 +12,37 @@
     <body>
         
         <div id="app">
-            <div class="container">
+            <div class="my-container bg-main full-page mb-3 mt-3">
                 <div class="row">
-                    <div class="col-12">
-                        <input type="text" @keyup.enter="addTask()" placeholder="aggiungi task" v-model="newTask">
-                        <button @click="addTask()">
+                    <div class="col-12 text-center mb-5">
+                        <h1 class="text-white">
+                            To do
+                        </h1>
+                    </div>
+                    <div class="col-8 mb-3">
+                        <input class="ps-2" type="text" @keyup.enter="addTask()" placeholder="aggiungi task" v-model="newTask">
+                    </div>
+                    <div class="col-4 mb-3 text-end">
+                        <button @click="addTask()" class="aggiungi text-white">
                             Aggiungi
                         </button>
                     </div>
                     <div class="col-12">
                         <ul v-if="todos.length > 0">
-                            <li v-for ="(todo, i) in todos" :class="{
-                                'done': todo.done,
-                                'not-done': !todo.done,
-                            }" class="d-flex justify-content-between">
-                                <span @click="reverseDone(i)">
+                            <li v-for ="(todo, i) in todos" class="d-flex justify-content-between mb-3">
+                                <span @click="reverseDone(i)" :class="{
+                                    'done': todo.done,
+                                    'not-done': !todo.done,
+                                }">
                                     {{todo.text}}
                                 </span>
-                                <button @click="deleteTodo(i)">
+                                <button @click="deleteTodo(i)"  class="x-button"> 
                                     &#10005;
                                 </button>
                             </li>
                         </ul>
-                        <p v-else>
-                            Non hai da fare nulla :D
+                        <p v-else class="text-white">
+                            Non hai da fare nulla 😉
                         </p>
                     </div>
                 </div>

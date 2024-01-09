@@ -8,7 +8,7 @@ createApp({
             todos:[
                 {
                     text:"Finire l'esercizio vue-todolist",
-                    done: false,
+                    done: true,
                 },
                 {
                     text:"Mangiare",
